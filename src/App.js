@@ -1,35 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Title from './components/Title';
+import Form from './components/Form';
+import Data from './components/Data';
+
 import { API_KEY } from './secrets.json';
 
-function App() {
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(myJson) {
-            console.log(JSON.stringify(myJson));
-        });
+export default class App extends React.Component {
+    getMarsRoverData = async () => {
+        const api_call = await fetch(
+            `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${API_KEY}`
+        );
+        const data = await api_call.json();
+        console.log('Data from API call: ', data);
+    };
 
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
-    );
+    render() {
+        return (
+            <React.Fragment>
+                <Title />
+                <Form />
+                <Data />
+            </React.Fragment>
+        );
+    }
 }
-
-export default App;
