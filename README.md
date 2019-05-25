@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mars Rover Search by Steve Frenzel
 
-## Available Scripts
+###### Please note this is a work in progress website and documentation, so content and appearance will change during time.
 
-In the project directory, you can run:
+## 1. Introduction
 
-### `npm start`
+My name is Steve and I'm a Junior Full Stack Web Developer from Berlin, Germany. I graduated from coding bootcamp [SPICED Academy](https://www.spiced-academy.com/) in May 2019 and this is my first project I'm working "on my own".
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I had a lot of fun using [React](https://reactjs.org/) during my studies, so I decided to dive deeper into the documentation to find out what this JavaScript library is really capable of.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This project will also be my playground for making a website as responsive as possible, as this is not only a really interesting process, but also crucial for making it look good on as many devices as possible. Therefore I will either use [Bootstrap](https://getbootstrap.com/) or [styled components](https://www.styled-components.com/), I haven't decided yet. 😬
 
-### `npm test`
+## 2. Idea
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+My main goal will be to create a website that is getting live data from an API of my choice, looks and feels nice and is as responsive as possible. For this project I will access the [NASA API](https://api.nasa.gov/api.html#MarsPhotos) to create a search for photos taken by a Mars rover. It get's even better: You can either filter the search by using the earth date or the martian sol! 😱
 
-### `npm run build`
+Depending on the Mars rover selected, you can see photos taken by one of the following cameras:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Front Hazard Avoidance Camera
+2. Rear Hazard Avoidance Camera
+3. Mast Camera
+4. Chemistry and Camera Complex
+5. Mars Hand Lens Imager
+6. Mars Descent Imager
+7. Navigation Camera
+8. Panoramic Camera
+9. Miniature Thermal Emission Spectrometer (Mini-TES)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## 3. Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+By now I have the following structure, but it will change and expand:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. App.js
+    - Title.js
+    - Form.js
+    - Data.js
