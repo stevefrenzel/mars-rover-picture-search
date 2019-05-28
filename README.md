@@ -28,7 +28,7 @@ Depending on the Mars rover selected, you can see photos taken by one of the fol
 
 ## 3. Structure
 
-By now it is very simple, only three components:
+By now it is very simple, only three components so far:
 
 -   Title.js
 -   Form.js
@@ -38,11 +38,11 @@ I haven't spend any thought on design yet, as I want it to be fully functional b
 
 ## 4. To Do List
 
-#### Choosing between earth time or martian sol
+#### 1. Choosing between earth time or martian sol
 
 Depending on the selection, an input field for entering the earth date (calendar) or the martian sol (number) will appear.
 
-#### Showing only available cameras
+#### 2. Showing only available cameras
 
 Depending on the selected Mars rover, the following cameras will be available:
 
@@ -64,6 +64,6 @@ Depending on the selected Mars rover, the following cameras will be available:
 -   Panoramic Camera
 -   Miniature Thermal Emission Spectrometer (Mini-TES)
 
-#### Showing pictures
+#### 3. Showing pictures
 
 Show the available amount of photos (25 per page, limited by NASA), otherwise show a message that no pictures are available.
