@@ -28,12 +28,13 @@ Depending on the Mars rover selected, you can see photos taken by one of the fol
 
 ## 3. Structure
 
-By now I have the following structure, but it will change and expand:
+By now it is very simple, only three components:
 
-1. App.js
-    - Title.js
-    - Form.js
-    - Pictures.js
+-   Title.js
+-   Form.js
+-   Pictures.js
+
+I haven't spend any thought on design yet, as I want it to be fully functional beforehand, but I may put Form.js into a sidebar and show the pictures in a separated frame.
 
 ## 4. To Do List
 
