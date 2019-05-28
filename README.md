@@ -33,7 +33,7 @@ By now I have the following structure, but it will change and expand:
 1. App.js
     - Title.js
     - Form.js
-    - Data.js
+    - Pictures.js
 
 ## 4. To Do List
 
