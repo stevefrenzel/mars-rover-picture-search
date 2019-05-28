@@ -23,15 +23,22 @@ class Form extends React.Component {
                     </select>
                     <br />
                     <br />
+                    {/*
                     <label htmlFor="time_select">Choose a timezone: </label>
                     <select id="time_select">
                         <option value="earth_date">Earth time</option>
                         <option value="martian_sol">Martian sol</option>
                     </select>
                     <br />
-                    <input type="date" />
-                    <br />
-                    <input type="number" placeholder="please enter a number" />
+                    <input type="date" name="earth_date" />
+                    <br />*/}
+                    <p>Enter a number:</p>
+                    <input
+                        type="number"
+                        name="martian_sol"
+                        placeholder="enter a number"
+                        required
+                    />
                     <br />
                     <br />
                     <label htmlFor="camera_select">Choose a camera: </label>
