@@ -34,3 +34,35 @@ By now I have the following structure, but it will change and expand:
     - Title.js
     - Form.js
     - Data.js
+
+## 4. To Do List
+
+#### Choosing between earth time or martian sol
+
+Depending on the selection, an input field for entering the earth date (calendar) or the martian sol (number) will appear.
+
+#### Showing only available cameras
+
+Depending on the selected Mars rover, the following cameras will be available:
+
+**Curiosity:**
+
+-   Front Hazard Avoidance Camera
+-   Rear Hazard Avoidance Camera
+-   Mast Camera
+-   Chemistry and Camera Complex
+-   Mars Hand Lens Imager
+-   Mars Descent Imager
+-   Navigation Camera
+
+**Opportunity & Spirit:**
+
+-   Front Hazard Avoidance Camera
+-   Rear Hazard Avoidance Camera
+-   Navigation Camera
+-   Panoramic Camera
+-   Miniature Thermal Emission Spectrometer (Mini-TES)
+
+#### Showing pictures
+
+Show the available amount of photos (25 per page, limited by NASA), otherwise show a message that no pictures are available.
