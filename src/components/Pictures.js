@@ -2,7 +2,7 @@ import React from 'react';
 
 export default class Pictures extends React.Component {
     render() {
-        if (!this.props) {
+        if (!this.props.photos) {
             return null;
         }
         return (
@@ -18,6 +18,13 @@ export default class Pictures extends React.Component {
                         </p>
                     ))
                 }
+                {this.props.photos.photos.map(photo => (
+                    <img
+                        src={photo.img_src}
+                        alt="enter dynamic context"
+                        key={photo.id}
+                    />
+                ))}
             </React.Fragment>
         );
     }
