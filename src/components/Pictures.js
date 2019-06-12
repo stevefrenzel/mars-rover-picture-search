@@ -32,5 +32,4 @@ export default class Pictures extends React.Component {
 
 // TO DO LIST
 
-// access photos: Object.photos[i][0].img_src
 // show message if no photos are available
