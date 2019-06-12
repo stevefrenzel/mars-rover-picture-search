@@ -5,7 +5,7 @@ import Pictures from './components/Pictures';
 
 import { API_KEY } from './secrets.json';
 
-class App extends React.Component {
+export default class App extends React.Component {
     state = {
         rover: null,
         time: null,
@@ -47,5 +47,3 @@ class App extends React.Component {
         );
     }
 }
-
-export default App;
