@@ -1,12 +1,10 @@
 import React from 'react';
 
-class Form extends React.Component {
-    enterEarthTimeOrMartianSol() {
-        if (document.getElementById('time_select').value === 'earth_date') {
+export default class Form extends React.Component {
+    enterEarthTimeOrMartianSol(e) {
+        if (e.target.value === 'earth_date') {
             console.log('enter earth date');
-        } else if (
-            document.getElementById('time_select').value === 'martian_sol'
-        ) {
+        } else if (e.target.value === 'martian_sol') {
             console.log('enter martian_sol');
         }
     }
@@ -23,23 +21,28 @@ class Form extends React.Component {
                     </select>
                     <br />
                     <br />
-                    {/*
+
                     <label htmlFor="time_select">Choose a timezone: </label>
                     <select id="time_select">
-                        <option value="earth_date">Earth time</option>
-                        <option value="martian_sol">Martian sol</option>
+                        <option
+                            value="earth_date"
+                            onClick={this.enterEarthTimeOrMartianSol}
+                        >
+                            Earth time
+                        </option>
+                        <option
+                            value="martian_sol"
+                            onClick={this.enterEarthTimeOrMartianSol}
+                        >
+                            Martian sol
+                        </option>
                     </select>
                     <br />
+
                     <input type="date" name="earth_date" />
-                    <br />*/}
-                    <p>Enter a number:</p>
-                    <input
-                        type="number"
-                        name="martian_sol"
-                        placeholder="enter a number"
-                        required
-                    />
+                    <input type="number" name="martian_sol" />
                     <br />
+
                     <br />
                     <label htmlFor="camera_select">Choose a camera: </label>
                     <select id="camera_select">
@@ -62,6 +65,7 @@ class Form extends React.Component {
                         </option>
                     </select>
                     <br />
+
                     <br />
                     <button>Get Photos</button>
                 </form>
@@ -69,8 +73,6 @@ class Form extends React.Component {
         );
     }
 }
-
-export default Form;
 
 // TO DO:
 
