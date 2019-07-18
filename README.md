@@ -1,8 +1,8 @@
-# Mars Rover Search by Steve Frenzel
+# Mars Rover Picture Search
 
 ###### Please note this is a work in progress website and documentation, so content and appearance will change during time.
 
-## 1. Introduction
+## 1. Introduction 👋
 
 My name is Steve and I'm a Junior Full Stack Web Developer from Berlin, Germany. I graduated from coding bootcamp [SPICED Academy](https://www.spiced-academy.com/) in May 2019 and this is my first project I'm working "on my own".
 
@@ -10,9 +10,9 @@ I had a lot of fun using [React](https://reactjs.org/) during my studies, so I d
 
 This project will also be my playground for making a website as responsive as possible, as this is not only a really interesting process, but also crucial for making it look good on as many devices as possible. Therefore I will either use [Bootstrap](https://getbootstrap.com/) or [styled components](https://www.styled-components.com/), I haven't decided yet. 😬
 
-## 2. Idea
+## 2. Idea 💡
 
-My main goal will be to create a website that is getting live data from an API of my choice, looks and feels nice and is as responsive as possible. For this project I will access the [NASA API](https://api.nasa.gov/api.html#MarsPhotos) to create a search for photos taken by a Mars rover. It get's even better: You can either filter the search by using the earth date or the martian sol! 😱
+My main goal will be to create a website that is getting live data from an API of my choice, looks and feels nice and is displayed correctly on mobile devices. For this project I will access the [NASA API](https://api.nasa.gov/api.html#MarsPhotos) to create a search for photos taken by a Mars rover. It get's even better: You can either filter the search by using the earth date or the martian sol! 😱
 
 Depending on the Mars rover selected, you can see photos taken by one of the following cameras:
 
@@ -26,17 +26,20 @@ Depending on the Mars rover selected, you can see photos taken by one of the fol
 8. Panoramic Camera
 9. Miniature Thermal Emission Spectrometer (Mini-TES)
 
-## 3. Structure
+## 3. Structure 🗂
 
 By now it is very simple, only three components so far:
 
--   Title.js
--   Form.js
--   Pictures.js
+```
+App.js
+|_ Title.js
+|_  Form.js
+|_  Pictures.js
+```
 
 I haven't spend any thought on design yet, as I want it to be fully functional beforehand, but I may put Form.js into a sidebar and show the pictures in a separated frame.
 
-## 4. To Do List
+## 4. To Do List ⚠️
 
 #### 1. Choosing between earth time or martian sol
 
@@ -67,3 +70,7 @@ Depending on the selected Mars rover, the following cameras will be available:
 #### 3. Showing pictures
 
 Show the available amount of photos (25 per page, limited by NASA), otherwise show a message that no pictures are available.
+
+#### 4. Add semantic HTML
+
+This will not only make the code easier for others to read but also for search engines to crawl over it.
