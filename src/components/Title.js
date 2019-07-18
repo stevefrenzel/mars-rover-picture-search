@@ -5,10 +5,7 @@ export default class Title extends React.Component {
         return (
             <React.Fragment>
                 <h1>Mars Rover Picture Search</h1>
-                <p>
-                    Search for photos of Mars rover Curiousity, Opportunity and
-                    Spirit!
-                </p>
+                <p>Search for photos of Mars rover Curiousity, Opportunity and Spirit!</p>
             </React.Fragment>
         );
     }
