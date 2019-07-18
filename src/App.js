@@ -18,11 +18,13 @@ export default class App extends React.Component {
         const rover = e.target.elements.rover_select.value;
         const time = e.target.elements.martian_sol.value;
         const camera = e.target.elements.camera_select.value;
+
         const api_call = await fetch(
             `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${time}&camera=${camera}&api_key=${API_KEY}`
         );
         const data = await api_call.json();
-        console.log('Data from API call: ', data);
+        // console.log('Data from API call: ', data);
+        
         this.setState({
             rover: rover,
             time: time,
