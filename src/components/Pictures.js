@@ -8,10 +8,7 @@ export default class Pictures extends React.Component {
         return (
             <React.Fragment>
                 <h1>Data Component</h1>
-                {
-                    (this.props.rover,
-                    this.props.time,
-                    this.props.camera && (
+                { (this.props.rover, this.props.time, this.props.camera && (
                         <p>
                             Mars rover: {this.props.rover} • Martian Sol:{' '}
                             {this.props.time} • Camera: {this.props.camera}
@@ -19,11 +16,7 @@ export default class Pictures extends React.Component {
                     ))
                 }
                 {this.props.photos.photos.map(photo => (
-                    <img
-                        src={photo.img_src}
-                        alt="enter dynamic context"
-                        key={photo.id}
-                    />
+                    <img src={photo.img_src} alt="enter dynamic context" key={photo.id} />
                 ))}
             </React.Fragment>
         );
