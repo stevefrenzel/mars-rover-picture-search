@@ -1,71 +1,88 @@
 import React from 'react';
+import MarsRover from '../components/MarsRover';
+import Timezone from '../components/Timezone';
+import EarthDate from '../components/EarthDate';
+import MartianSol from '../components/MartianSol';
+import Curiosity from '../components/Curiosity';
+import OpportunityAndSpirit from '../components/OpportunityAndSpirit';
 
 export default class Form extends React.Component {
+    state = {
+        roverSelected: false,
+        timezoneSelected: false,
+        dateEntered: false,
+        cameraSelected: false
+    };
 
-    enterEarthTimeOrMartianSol(e) {
-        if (e.target.value === 'earth_date') {
-            console.log('enter earth date');
-        } else if (e.target.value === 'martian_sol') {
-            console.log('enter martian_sol');
-        }
+    // SWITCHING STATE TO TRUE
+
+    marsRoverSelected = () => {
+        this.setState({
+            roverSelected: true
+        })
+    }
+
+    timezoneSelected = () => {
+        this.setState({
+            timezoneSelected: true
+        })
+    }
+
+    dateEntered = () => {
+        this.setState({
+            dateEntered: true
+        })
+    }
+
+    cameraSelected = () => {
+        this.setState({
+            cameraSelected: true
+        })
+    }
+
+    // RENDERING SECTIONS
+
+    renderTimezoneSelection() {
+    }
+
+    renderDate() {
+    }
+
+    renderCameraSelection() {
+    }
+
+    renderSubmitButton() {
     }
 
     render() {
+
         return (
             <React.Fragment>
+                <element className='component' id='form_component'>
                 <form onSubmit={this.props.getMarsRoverData}>
 
                     {/* CHOOSE MARS ROVER */}
 
-                    <label htmlFor="rover_select">Choose a Mars rover: </label>
-                    <select id="rover_select" name="rover_select">
-                        <option value="curiosity">Curiosity</option>
-                        <option value="opportunity">Opportunity</option>
-                        <option value="spirit">Spirit</option>
-                    </select>
-
-                    <br />
-                    <br />
+                    <MarsRover />
 
                     {/* CHOOSE TIMEZONE */}
 
-                    <label htmlFor="time_select">Choose a timezone: </label>
-                    <select id="time_select">
-                        <option value="earth_date" onClick={this.enterEarthTimeOrMartianSol}>Earth time</option>
-                        <option value="martian_sol" onClick={this.enterEarthTimeOrMartianSol}>Martian sol</option>
-                    </select>
-
-                    <br />
+                    <Timezone />
 
                     {/* ENTER DATE */}
 
-                    <input type="date" name="earth_date" />
-                    <input type="number" name="martian_sol" />
-
-                    <br />
-                    <br />
+                    {/* ADD CONDITIONAL TO SHOW EITHER */}
+                    {/* EarthDate.js OR MartianSol.js */}
 
                     {/* CHOOSE CAMERA */}
 
-                    <label htmlFor="camera_select">Choose a camera: </label>
-                    <select id="camera_select">
-                        <option value="fhaz">Front Hazard Avoidance Camera</option>
-                        <option value="rhaz">Rear Hazard Avoidance Camera</option>
-                        <option value="mast">Mast Camera</option>
-                        <option value="chemcam">Chemistry and Camera Complex</option>
-                        <option value="mahli">Mars Hand Lens Imager</option>
-                        <option value="mardi">Mars Descent Imager</option>
-                        <option value="navcam">Navigation Camera</option>
-                        <option value="pancam">Panoramic Camera</option>
-                        <option value="minites">Miniature Thermal Emission Spectrometer (Mini-TES)</option>
-                    </select>
-
-                    <br />
-                    <br />
+                    {/* ADD CONDITIONAL TO SHOW EITHER */}
+                    {/* Curiosity.js OR OpportunityAndSpirit.js */}
 
                     <button>Get Photos</button>
 
                 </form>
+                </element>
             </React.Fragment>
         );
     }
@@ -73,4 +90,13 @@ export default class Form extends React.Component {
 
 // TO DO:
 
-// add input field to enter date, depending on choice
+// radio button is "jumping", need to isolate each section
+
+// show timezone selection ONLY after Mars rover has been chosen
+// show date depending on timezone selection
+
+// show camera selection ONLY after timezone has been chosen
+// how to write DRY code for camera section?
+
+// show submit button ONLY after Mars rover, timezone and camera section have been chosen
+// and date has been entered
