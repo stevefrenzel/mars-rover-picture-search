@@ -15,6 +15,7 @@ export default class Form extends React.Component {
     };
 
     // SWITCHING STATE TO TRUE
+    // possible to write it DRY?
 
     marsRoverSelected = () => {
         this.setState({
@@ -96,7 +97,6 @@ export default class Form extends React.Component {
 // show date depending on timezone selection
 
 // show camera selection ONLY after timezone has been chosen
-// how to write DRY code for camera section?
 
-// show submit button ONLY after Mars rover, timezone and camera section have been chosen
-// and date has been entered
+// show submit button ONLY after Mars rover + timezone + camera section 
+// have been chosen and date has been entered
