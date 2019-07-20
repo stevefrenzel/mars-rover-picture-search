@@ -101,6 +101,8 @@ export default class Form extends React.Component {
 // MarsRover, Timezone, EarthDate, MartianSol, Curiosity and OpportunityAndSpirit
 // to parent component Form
 
+// Could there be a conflict with props from camera selection as they're both declared 'camera'?
+
 // 2.
 // show timezone selection ONLY after Mars rover has been chosen
 // show date depending on timezone selection
