@@ -6,28 +6,42 @@ export default class Curiosity extends React.Component {
             <React.Fragment>
                 <div className='component' id='curiosity_component'>
                     <h1>Curiosity.js</h1>
-                    <p><label htmlFor="camera_select">Choose a camera: </label></p>
+                    <p>Choose a camera:</p>
 
-                    <input type="radio" id="select_camera" name="camera_select" value="fhaz" />
-                    <label htmlFor="select_camera">Front Hazard Avoidance Camera</label>
+                    <div className='radio_button'>
+                        <input type="radio" id="fhaz_camera_curiosity" name="camera_select_curiosity" value="fhaz" />
+                        <label htmlFor="fhaz_camera_curiosity">Front Hazard Avoidance Camera</label>
+                    </div>
 
-                    <input type="radio" id="select_camera" name="camera_select" value="rhaz" />
-                    <label htmlFor="select_camera">Rear Hazard Avoidance Camera</label>
+                    <div className='radio_button'>
+                        <input type="radio" id="rhaz_camera_curiosity" name="camera_select_curiosity" value="rhaz" />
+                        <label htmlFor="rhaz_camera_curiosity">Rear Hazard Avoidance Camera</label>
+                    </div>
 
-                    <input type="radio" id="select_camera" name="camera_select" value="mast" />
-                    <label htmlFor="select_camera">Mast Camera</label>
+                    <div className='radio_button'>
+                        <input type="radio" id="mast_camera_curiosity" name="camera_select_curiosity" value="mast" />
+                        <label htmlFor="mast_camera_curiosity">Mast Camera</label>
+                    </div>
 
-                    <input type="radio" id="select_camera" name="camera_select" value="chemcam" />
-                    <label htmlFor="select_camera">Chemistry and Camera Complex</label>
+                    <div className='radio_button'>
+                        <input type="radio" id="chemcam_camera_curiosity" name="camera_select_curiosity" value="chemcam" />
+                        <label htmlFor="chemcam_camera_curiosity">Chemistry and Camera Complex</label>
+                    </div>
 
-                    <input type="radio" id="select_camera" name="camera_select" value="mahli" />
-                    <label htmlFor="select_camera">Mars Hand Lens Imager</label>
+                    <div className='radio_button'>
+                        <input type="radio" id="mahli_camera_curiosity" name="camera_select_curiosity" value="mahli" />
+                        <label htmlFor="mahli_camera_curiosity">Mars Hand Lens Imager</label>
+                    </div>
 
-                    <input type="radio" id="select_camera" name="camera_select" value="mardi" />
-                    <label htmlFor="select_camera">Mars Descent Imager</label>
+                    <div className='radio_button'>
+                        <input type="radio" id="mardi_camera_curiosity" name="camera_select_curiosity" value="mardi" />
+                        <label htmlFor="mardi_camera_curiosity">Mars Descent Imager</label>
+                    </div>
 
-                    <input type="radio" id="select_camera" name="camera_select" value="navcam" />
-                    <label htmlFor="select_camera">Navigation Camera</label>
+                    <div className='radio_button'>
+                        <input type="radio" id="navcam_camera_curiosity" name="camera_select_curiosity" value="navcam" />
+                        <label htmlFor="navcam_camera_curiosity">Navigation Camera</label>
+                    </div>
                 </div>
             </React.Fragment>
         )
