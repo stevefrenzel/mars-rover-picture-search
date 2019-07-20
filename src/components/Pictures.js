@@ -7,17 +7,17 @@ export default class Pictures extends React.Component {
         }
         return (
             <React.Fragment>
-                <h1>Data Component</h1>
-                { (this.props.rover, this.props.time, this.props.camera && (
-                        <p>
-                            Mars rover: {this.props.rover} • Martian Sol:{' '}
-                            {this.props.time} • Camera: {this.props.camera}
-                        </p>
-                    ))
-                }
-                {this.props.photos.photos.map(photo => (
-                    <img src={photo.img_src} alt="enter dynamic context" key={photo.id} />
-                ))}
+                <div className='component' id='pictures_component'>
+                    <h1>Data Component</h1>
+                    { (this.props.rover, this.props.time, this.props.camera && (
+                            <p>
+                                Mars rover: {this.props.rover} • Martian Sol:{' '}
+                                {this.props.time} • Camera: {this.props.camera}
+                            </p>
+                        ))
+                    }
+                    {this.props.photos.photos.map(photo => (<img src={photo.img_src} alt="enter dynamic context" key={photo.id} />))}
+                </div>
             </React.Fragment>
         );
     }
