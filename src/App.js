@@ -17,6 +17,12 @@ export default class App extends React.Component {
     getMarsRoverData = async e => {
         e.preventDefault();
         const rover = e.target.elements.rover_select.value;
+
+        // Below it should either be
+        // const earth_date = e.target.elements.earth_date.value;
+        // OR
+        // const martian_sol = e.target.elements.martian_sol.value;
+        
         const time = e.target.elements.martian_sol.value;
         const camera = e.target.elements.camera_select.value;
         const api_call = await fetch(
