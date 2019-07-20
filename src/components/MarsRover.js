@@ -10,17 +10,17 @@ export default class MarsRover extends React.Component {
                     <p>Choose a Mars rover:</p>
                 
                     <div className='radio_button'>
-                        <input onClick={this.props.selectRover} type="radio" id="select_curiosity" name="rover_select" value="curiosity" />
+                        <input onClick={this.props.selectRover} type="radio" id="select_curiosity" name="rover_select" value="curiosity" required/>
                         <label htmlFor="curiosity">Curiosity</label>
                     </div>
 
                     <div className='radio_button'>
-                        <input onClick={this.props.selectRover} type="radio" id="select_opportunity" name="rover_select" value="opportunity" />
+                        <input onClick={this.props.selectRover} type="radio" id="select_opportunity" name="rover_select" value="opportunity" required />
                         <label htmlFor="opportunity">Opportunity</label>
                     </div>
 
                     <div className='radio_button'>
-                        <input onClick={this.props.selectRover} type="radio" id="select_spirit" name="rover_select" value="spirit" />
+                        <input onClick={this.props.selectRover} type="radio" id="select_spirit" name="rover_select" value="spirit" required />
                         <label htmlFor="spirit">Spirit</label>
                     </div>
                 </div>
