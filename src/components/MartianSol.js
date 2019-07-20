@@ -6,7 +6,7 @@ export default class MartianSol extends React.Component {
             <React.Fragment>
                 <div className='component' id='martian_sol_component'>
                     <h1>MartianSol.js</h1>
-                    <input type="number" name="martian_sol" />
+                    <input id='martian_sol_input' type='number' name='martian_sol' />
                 </div>
             </React.Fragment>
         )
