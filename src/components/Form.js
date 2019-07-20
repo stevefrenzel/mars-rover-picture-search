@@ -96,12 +96,18 @@ export default class Form extends React.Component {
 
 // TO DO:
 
-// radio button is "jumping", need to isolate each section
+// 1.
+// pass props from child components 
+// MarsRover, Timezone, EarthDate, MartianSol, Curiosity and OpportunityAndSpirit
+// to parent component Form
 
+// 2.
 // show timezone selection ONLY after Mars rover has been chosen
 // show date depending on timezone selection
 
+// 3.
 // show camera selection ONLY after timezone has been chosen
 
+// 4.
 // show submit button ONLY after Mars rover + timezone + camera section 
 // have been chosen and date has been entered
