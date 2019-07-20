@@ -6,21 +6,75 @@
 
 body {
     margin: 0;
-    text-align-last: center
+}
+
+button {
+    display: block;
+}
+
+/* FLEXBOX SETTINGS */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.component {
+    text-align: center;
 }
 
 /* TITLE COMPONENT */
 
+#title_component {
+    background-color: tomato;
+    text-align: center;
+}
+
 /* FORM COMPONENT */
+
+#form_component {
+    background-color: goldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+}
 
 /* MARS ROVER COMPONENT */
 
+#mars_rover_component {
+    background-color: blueviolet;
+}
+
 /* TIMEZONE COMPONENT */
+
+#timezone_component {
+    background-color: rosybrown;
+}
 
 /* DATE COMPONENTS */
 
+#earth_date_component {
+    background-color: teal;
+}
+
+#martian_sol_component {
+    background-color: saddlebrown;
+}
+
 /* CURIOSITY COMPONENT */
 
+#curiosity_component {
+    background-color: yellowgreen;
+}
+
 /* OPPORTUNITY & SPIRIT COMPONENT */
+
+#opportunity_spirit_component {
+    background-color: violet;
+}
 
 /* PICTURES COMPONENT */
