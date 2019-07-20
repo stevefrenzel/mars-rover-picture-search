@@ -59,31 +59,36 @@ export default class Form extends React.Component {
 
         return (
             <React.Fragment>
-                <element className='component' id='form_component'>
-                <form onSubmit={this.props.getMarsRoverData}>
+                <div className='component' id='form_component'>
+                    <h1>Form.js</h1>
+                    <form onSubmit={this.props.getMarsRoverData}>
 
-                    {/* CHOOSE MARS ROVER */}
+                        {/* CHOOSE MARS ROVER */}
 
-                    <MarsRover />
+                        <MarsRover />
 
-                    {/* CHOOSE TIMEZONE */}
+                        {/* CHOOSE TIMEZONE */}
 
-                    <Timezone />
+                        <Timezone />
 
-                    {/* ENTER DATE */}
+                        {/* ENTER DATE */}
 
-                    {/* ADD CONDITIONAL TO SHOW EITHER */}
-                    {/* EarthDate.js OR MartianSol.js */}
+                        {/* ADD CONDITIONAL TO SHOW EITHER */}
+                        <EarthDate />
+                        {/* OR */}
+                        <MartianSol />
 
-                    {/* CHOOSE CAMERA */}
+                        {/* CHOOSE CAMERA */}
 
-                    {/* ADD CONDITIONAL TO SHOW EITHER */}
-                    {/* Curiosity.js OR OpportunityAndSpirit.js */}
+                        {/* ADD CONDITIONAL TO SHOW EITHER */}
+                        <Curiosity />
+                        {/* OR */}
+                        <OpportunityAndSpirit />
 
-                    <button>Get Photos</button>
+                        <button>Get Photos</button>
 
-                </form>
-                </element>
+                    </form>
+                </div>
             </React.Fragment>
         );
     }
