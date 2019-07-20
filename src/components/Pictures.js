@@ -8,7 +8,7 @@ export default class Pictures extends React.Component {
         return (
             <React.Fragment>
                 <div className='component' id='pictures_component'>
-                    <h1>Data Component</h1>
+                    <h1>Pictures.js</h1>
                     { (this.props.rover, this.props.time, this.props.camera && (
                             <p>
                                 Mars rover: {this.props.rover} • Martian Sol:{' '}
