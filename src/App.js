@@ -35,15 +35,17 @@ export default class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Title />
-                <Form getMarsRoverData={this.getMarsRoverData} />
-                <Pictures
-                    rover={this.state.rover}
-                    time={this.state.time}
-                    camera={this.state.camera}
-                    photos={this.state.photos}
-                    error={this.state.error}
-                />
+                <div className='wrapper'>
+                    <Title />
+                    <Form getMarsRoverData={this.getMarsRoverData} />
+                    <Pictures
+                        rover={this.state.rover}
+                        time={this.state.time}
+                        camera={this.state.camera}
+                        photos={this.state.photos}
+                        error={this.state.error}
+                    />
+                </div>
             </React.Fragment>
         );
     }
