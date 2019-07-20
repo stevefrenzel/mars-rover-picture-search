@@ -5,54 +5,59 @@ import EarthDate from '../components/EarthDate';
 import MartianSol from '../components/MartianSol';
 import Curiosity from '../components/Curiosity';
 import OpportunityAndSpirit from '../components/OpportunityAndSpirit';
+import SubmitButton from './SubmitButton';
 
 export default class Form extends React.Component {
     state = {
         rover: null,
-        roverSelected: false,
-        timezoneSelected: false,
         earth_date: null,
         martian_sol: null,
-        dateEntered: false,
         camera: null,
+        
+        earthDateEntered: false,
+        martianSolEntered: false,
+
+        roverSelected: false,
+        earthDateSelected: false,
+        martianSolSelected: false,
         cameraSelected: false,
+        curiositySelected: false,
+        opportunityOrSpiritSelected: false
     };
 
     // GETTING DATA FROM CHILD COMPONENTS
 
     selectRover = (e) => {
-        this.setState({
-            rover: e.target.value,
-            roverSelected: true
-        });
+        this.setState({ rover: e.target.value, roverSelected: true });
     }
 
+    // how to only setState when radio button is checked?
     selectTimezone = (e) => {
-        this.setState({
-            timezone: e.target.value,
-            timezoneSelected: true
-        });
+        if (e.target.value === 'earth_date') {
+            this.setState({ timezone: e.target.value, earthDateSelected: true });
+        } else if (e.target.value === 'martian_sol'){
+            this.setState({ timezone: e.target.value, martianSolSelected: true });
+        }
     }
 
     selectEarthDate = (e) => {
-        this.setState({
-            earth_date: e.target.value,
-            dateEntered: true
-        });
+        this.setState({ earth_date: e.target.value, earthDateEntered: true });
     }
 
     selectMartianSol = (e) => {
-        this.setState({
-            martian_sol: e.target.value,
-            dateEntered: true
-        });
+        if (e.target.value === '') {
+            this.setState({ dateEntered: false });
+        } else {
+            this.setState({ martian_sol: e.target.value, martianSolEntered: true });
+        }        
     }
 
     selectCamera = (e) => {
-        this.setState({
-            camera: e.target.value,
-            cameraSelected: true
-        });
+        if (e.target.value === 'curiosity') {
+            this.setState({ camera: e.target.value, curiositySelected: true });
+        } else if (e.target.value === 'opportunity' || 'spirit') {
+            this.setState({ camera: e.target.value, opportunityOrSpiritSelected: true });
+        }
     }
 
     render() {
@@ -69,25 +74,28 @@ export default class Form extends React.Component {
 
                         {/* CHOOSE TIMEZONE */}
 
-                        <Timezone selectTimezone={this.selectTimezone} />                        
+                        {this.state.roverSelected ? <Timezone selectTimezone={this.selectTimezone} /> : null}
+                                                
+                        {/* ENTER EARTH DATE OR MARTIAN SOL */}
 
-                        {/* ENTER DATE */}
-
-                        {/* ADD CONDITIONAL TO SHOW EITHER */}
-                        <EarthDate selectEarthDate={this.selectEarthDate}/>
-                        {/* OR */}
-                        <MartianSol selectMartianSol={this.selectMartianSol}/>
-
+                        {this.state.earthDateSelected ? <EarthDate selectEarthDate={this.selectEarthDate} /> : null}
+                      
+                        {this.state.martianSolSelected ? <MartianSol selectMartianSol={this.selectMartianSol} /> : null}
+                        
                         {/* CHOOSE CAMERA */}
 
-                        {/* ADD CONDITIONAL TO SHOW EITHER */}
-                        <Curiosity selectCamera={this.selectCamera}/>
-                        {/* OR */}
-                        <OpportunityAndSpirit selectCamera={this.selectCamera}/>
+                        <Curiosity selectCamera={this.selectCamera} />
 
-                        {(this.roverSelected, this.timezoneSelected, this.dateEntered, this.cameraSelected && (
-                            <button>Get Photos</button>
-                        ))}
+                        <OpportunityAndSpirit selectCamera={this.selectCamera} />
+
+                        {
+                            (this.state.roverSelected && 
+                            this.state.timezoneSelected &&  
+                            this.state.cameraSelected) && 
+                            (this.state.earthDateEntered || this.state.martianSolEntered) ? 
+                            <SubmitButton /> : 
+                            null
+                        }
                         
                     </form>
                 </div>
@@ -97,6 +105,8 @@ export default class Form extends React.Component {
 }
 
 // TO DO:
+
+// make all inputs required BEFORE submitting!
 
 // How to erase input from one date after switching to the other one?
 // (To avoid two inputs, which should make an invalid API call)
