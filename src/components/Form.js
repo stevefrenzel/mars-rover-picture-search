@@ -55,20 +55,6 @@ export default class Form extends React.Component {
         });
     }
 
-    // RENDERING SECTIONS
-
-    renderTimezoneSelection() {
-    }
-
-    renderDate() {
-    }
-
-    renderCameraSelection() {
-    }
-
-    renderSubmitButton() {
-    }
-
     render() {
 
         return (
@@ -83,7 +69,7 @@ export default class Form extends React.Component {
 
                         {/* CHOOSE TIMEZONE */}
 
-                        <Timezone selectTimezone={this.selectTimezone}/>
+                        <Timezone selectTimezone={this.selectTimezone} />                        
 
                         {/* ENTER DATE */}
 
@@ -99,8 +85,10 @@ export default class Form extends React.Component {
                         {/* OR */}
                         <OpportunityAndSpirit selectCamera={this.selectCamera}/>
 
-                        <button>Get Photos</button>
-
+                        {(this.roverSelected, this.timezoneSelected, this.dateEntered, this.cameraSelected && (
+                            <button>Get Photos</button>
+                        ))}
+                        
                     </form>
                 </div>
             </React.Fragment>
@@ -110,8 +98,8 @@ export default class Form extends React.Component {
 
 // TO DO:
 
-// How to erase input from one date if you've entered it but then change it?
-// (To avoid two inputs, which would make an invalid API call)
+// How to erase input from one date after switching to the other one?
+// (To avoid two inputs, which should make an invalid API call)
 
 // 2.
 // show timezone selection ONLY after Mars rover has been chosen
