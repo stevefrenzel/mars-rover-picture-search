@@ -4,7 +4,10 @@ export default class MartianSol extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <input type="number" name="martian_sol" />
+                <div className='component' id='martian_sol_component'>
+                    <h1>MartianSol.js</h1>
+                    <input type="number" name="martian_sol" />
+                </div>
             </React.Fragment>
         )
     }
