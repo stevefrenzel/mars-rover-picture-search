@@ -8,37 +8,51 @@ import OpportunityAndSpirit from '../components/OpportunityAndSpirit';
 
 export default class Form extends React.Component {
     state = {
+        rover: null,
         roverSelected: false,
         timezoneSelected: false,
+        earth_date: null,
+        martian_sol: null,
         dateEntered: false,
-        cameraSelected: false
+        camera: null,
+        cameraSelected: false,
     };
 
-    // SWITCHING STATE TO TRUE
-    // possible to write it DRY?
+    // GETTING DATA FROM CHILD COMPONENTS
 
-    marsRoverSelected = () => {
+    selectRover = (e) => {
         this.setState({
+            rover: e.target.value,
             roverSelected: true
-        })
+        });
     }
 
-    timezoneSelected = () => {
+    selectTimezone = (e) => {
         this.setState({
+            timezone: e.target.value,
             timezoneSelected: true
-        })
+        });
     }
 
-    dateEntered = () => {
+    selectEarthDate = (e) => {
         this.setState({
+            earth_date: e.target.value,
             dateEntered: true
-        })
+        });
     }
 
-    cameraSelected = () => {
+    selectMartianSol = (e) => {
         this.setState({
+            martian_sol: e.target.value,
+            dateEntered: true
+        });
+    }
+
+    selectCamera = (e) => {
+        this.setState({
+            camera: e.target.value,
             cameraSelected: true
-        })
+        });
     }
 
     // RENDERING SECTIONS
@@ -65,25 +79,25 @@ export default class Form extends React.Component {
 
                         {/* CHOOSE MARS ROVER */}
 
-                        <MarsRover />
+                        <MarsRover selectRover={this.selectRover}/>
 
                         {/* CHOOSE TIMEZONE */}
 
-                        <Timezone />
+                        <Timezone selectTimezone={this.selectTimezone}/>
 
                         {/* ENTER DATE */}
 
                         {/* ADD CONDITIONAL TO SHOW EITHER */}
-                        <EarthDate />
+                        <EarthDate selectEarthDate={this.selectEarthDate}/>
                         {/* OR */}
-                        <MartianSol />
+                        <MartianSol selectMartianSol={this.selectMartianSol}/>
 
                         {/* CHOOSE CAMERA */}
 
                         {/* ADD CONDITIONAL TO SHOW EITHER */}
-                        <Curiosity />
+                        <Curiosity selectCamera={this.selectCamera}/>
                         {/* OR */}
-                        <OpportunityAndSpirit />
+                        <OpportunityAndSpirit selectCamera={this.selectCamera}/>
 
                         <button>Get Photos</button>
 
@@ -96,12 +110,8 @@ export default class Form extends React.Component {
 
 // TO DO:
 
-// 1.
-// pass props from child components 
-// MarsRover, Timezone, EarthDate, MartianSol, Curiosity and OpportunityAndSpirit
-// to parent component Form
-
-// Could there be a conflict with props from camera selection as they're both declared 'camera'?
+// How to erase input from one date if you've entered it but then change it?
+// (To avoid two inputs, which would make an invalid API call)
 
 // 2.
 // show timezone selection ONLY after Mars rover has been chosen
