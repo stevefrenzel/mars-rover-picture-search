@@ -136,6 +136,8 @@ export default class Form extends React.Component {
 
 // TO DO:
 
+// Possible to store functions in components to clean up Form.js?
+
 // How to keep track of checked radio buttons?
 // (If certain buttons are unchecked, certain components need to disappear)
 
