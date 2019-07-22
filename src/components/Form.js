@@ -136,21 +136,15 @@ export default class Form extends React.Component {
 
 // TO DO:
 
-// Possible to store functions in components to clean up Form.js?
+// Possible to store functions in components to clean up Form.js ?
 
-// How to keep track of checked radio buttons?
+// How to keep track of checked radio buttons ? 
 // (If certain buttons are unchecked, certain components need to disappear)
 
-// How to erase input from one date after switching to the other one?
+// How to erase input from one date after switching to the other one ? 
 // (To avoid two inputs, which should make an invalid API call)
 
-// 2.
-// show timezone selection ONLY after Mars rover has been chosen
-// show date depending on timezone selection
-
-// 3.
-// show camera selection ONLY after timezone has been chosen
-
-// 4.
-// show submit button ONLY after Mars rover + timezone + camera section 
-// have been chosen and date has been entered
+// show camera selection ONLY after Mars rover has been chosen
+// show timezone selection ONLY after camera has been chosen
+// show date DEPENDING on timezone selection
+// show submit button ONLY after Mars rover, camera and timezone have been selected and date has been entered
