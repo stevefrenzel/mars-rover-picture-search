@@ -10,20 +10,20 @@ export default class App extends React.Component {
         rover: null,
         time: null,
         camera: null,
-        photos: null,
-        error: null
+        photos: null
     };
 
     getMarsRoverData = async e => {
         e.preventDefault();
+        let time;
         const rover = e.target.elements.rover_select.value;
-
-        // Below it should either be
-        // const earth_date = e.target.elements.earth_date.value;
-        // OR
-        // const martian_sol = e.target.elements.martian_sol.value;
         
-        const time = e.target.elements.martian_sol.value;
+        if (e.target.elements.earth_date) {
+            time = e.target.elements.earth_date.value;
+        } else {
+            time = e.target.elements.martian_sol.value;
+        }
+        
         const camera = e.target.elements.camera_select.value;
         const api_call = await fetch(
             `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${time}&camera=${camera}&api_key=${API_KEY}`
