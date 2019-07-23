@@ -38,17 +38,23 @@ export default class Form extends React.Component {
         if (e.target.value === 'curiosity') {
             this.setState({ 
                 rover: e.target.value, 
-                curiositySelected: true
+                curiositySelected: true,
+                opportunitySelected: false,
+                spiritSelected: false
              });
         } else if (e.target.value === 'opportunity') {
             this.setState({ 
                 rover: e.target.value, 
-                opportunitySelected: true
+                opportunitySelected: true,
+                curiositySelected: false,
+                spiritSelected: false
             });
         } else if (e.target.value === 'spirit') {
             this.setState({ 
                 rover: e.target.value, 
-                spiritSelected: true
+                spiritSelected: true,
+                curiositySelected: false,
+                opportunitySelected: false
              });
         } 
     }
@@ -65,32 +71,42 @@ export default class Form extends React.Component {
         if (e.target.value === 'earth_date') {
             this.setState({ 
                 timezone: e.target.value, 
-                earthDateSelected: true 
+                earthDateSelected: true,
+                martianSolSelected: false
             });
         } else if (e.target.value === 'martian_sol'){
             this.setState({ 
                 timezone: e.target.value, 
-                martianSolSelected: true 
+                martianSolSelected: true,
+                earthDateSelected: false
             });
         }
     }
 
     selectEarthDate = (e) => {
-        this.setState({ 
-            earth_date: e.target.value, 
-            earthDateEntered: true 
-        });
+        if (!e.target.value) {
+            this.setState({
+                earthDateEntered: false
+            });
+        } else {
+            this.setState({
+                earth_date: e.target.value,
+                earthDateEntered: true
+            });
+        }
     }
 
     selectMartianSol = (e) => {
-        if (e.target.value === '') {
-            this.setState({ dateEntered: false });
+        if (!e.target.value) {
+            this.setState({
+                martianSolEntered: false
+            }); 
         } else {
-            this.setState({ 
-                martian_sol: e.target.value, 
-                martianSolEntered: true 
-            });
-        }        
+            this.setState({
+                martian_sol: e.target.value,
+                martianSolEntered: true
+            }); 
+        }
     }
 
 
@@ -114,7 +130,7 @@ export default class Form extends React.Component {
 
                         {/* CHOOSE TIMEZONE */}
 
-                        <Timezone selectTimezone={this.selectTimezone} />
+                        {this.state.cameraSelected ? <Timezone selectTimezone={this.selectTimezone} /> : null}
                                                 
                         {/* ENTER EARTH DATE OR MARTIAN SOL */}
 
@@ -124,7 +140,6 @@ export default class Form extends React.Component {
 
                         {
                             ((this.state.curiositySelected || this.state.opportunitySelected || this.state.spiritSelected) && 
-                            this.state.timezoneSelected && 
                             (this.state.earthDateEntered || this.state.martianSolEntered) && 
                             this.state.cameraSelected) ? <SubmitButton /> : null}
                     </form>
@@ -137,12 +152,8 @@ export default class Form extends React.Component {
 // TO DO:
 
 // Possible to store functions in components to clean up Form.js ?
+// Have a look at hooks!
 
-// How to keep track of checked radio buttons ? 
-// (If certain buttons are unchecked, certain components need to disappear)
-
-// How to erase input from one date after switching to the other one ? 
-// (To avoid two inputs, which should make an invalid API call)
 
 // show camera selection ONLY after Mars rover has been chosen
 // show timezone selection ONLY after camera has been chosen
