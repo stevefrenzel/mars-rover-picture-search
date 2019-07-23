@@ -1,9 +1,20 @@
 import React from 'react';
+import { log } from 'util';
 
 export default class Pictures extends React.Component {
     render() {
+        console.log(this.props);
+        
         if (!this.props.photos) {
             return null;
+        }
+
+        if (!this.props.photos.length) {
+            return (
+                <React.Fragment>
+                    <h1>NO PHOTOS AVAILABLE!</h1>
+                </React.Fragment>
+            )
         }
         return (
             <React.Fragment>
@@ -22,7 +33,3 @@ export default class Pictures extends React.Component {
         );
     }
 }
-
-// TO DO LIST
-
-// show message if no photos are available
