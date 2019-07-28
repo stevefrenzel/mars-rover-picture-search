@@ -15,9 +15,22 @@ export default class Pictures extends React.Component {
         return (
             <React.Fragment>
                 <div className='component' id='pictures_component'>
-                    {this.props.photos.photos.map(photo => (<img src={photo.img_src} alt="enter dynamic context" key={photo.id} />))}
+                    {this.props.photos.photos.map(
+                        photo => (
+                            <a href={photo.img_src} rel="noopener noreferrer" target="_blank" key={photo.id}>
+                                <img src={photo.img_src} alt="M.R.P.S." key={photo.id} />
+                            </a>
+                        )
+                    )}
                 </div>
             </React.Fragment>
         );
     }
 }
+
+// TO DO:
+
+// How to add to alt of <img>
+// Rover: {photo.rover.name} / Camera: {photo.camera.full_name} / Earth Date: {photo.earth_date} / Martian Sol: {photo.sol}
+
+// NO PHOTOS AVAILABLE message not working...
