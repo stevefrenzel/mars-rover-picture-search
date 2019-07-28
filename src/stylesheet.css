@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+
 /* GLOBAL SETTINGS */
 
 * {
@@ -6,10 +8,13 @@
 
 body {
     margin: 0;
+    background-image: url('images/graphy.png');
+    background-attachment: fixed;
+    font-family: 'Titillium Web', sans-serif;
 }
 
-button {
-    display: block;
+h1, h2 {
+    margin: 0;
 }
 
 /* FLEXBOX SETTINGS */
@@ -19,62 +24,87 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 .component {
-    text-align: center;
+    padding: 1%;
+    width: 400px;
+}
+
+/* GLOBAL COMPONENT SETTINGS */
+
+#mars_rover_component, 
+#curiosity_component,
+#opportunity_spirit_component,
+#timezone_component, 
+#earth_date_component,
+#martian_sol_component {
+    margin: 5px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+#mars_rover_component, 
+#timezone_component {
+    background-color: rgba(5, 94, 169, .2);
+}
+
+#curiosity_component, 
+#opportunity_spirit_component, 
+#earth_date_component,
+#martian_sol_component {
+    background-color: rgba(248, 25, 61, .2);
 }
 
 /* TITLE COMPONENT */
 
 #title_component {
-    background-color: tomato;
     text-align: center;
+    width: 100vw;
 }
 
 /* FORM COMPONENT */
 
-#form_component {
-    background-color: goldenrod;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;    
-    align-items: center;
-}
 
 /* MARS ROVER COMPONENT */
 
-#mars_rover_component {
-    background-color: lightblue;
-}
-
-/* TIMEZONE COMPONENT */
-
-#timezone_component {
-    background-color: rosybrown;
-}
-
-/* DATE COMPONENTS */
-
-#earth_date_component {
-    background-color: teal;
-}
-
-#martian_sol_component {
-    background-color: saddlebrown;
-}
 
 /* CURIOSITY COMPONENT */
 
-#curiosity_component {
-    background-color: yellowgreen;
-}
 
 /* OPPORTUNITY & SPIRIT COMPONENT */
 
-#opportunity_spirit_component {
-    background-color: violet;
+
+/* TIMEZONE COMPONENT */
+
+
+/* DATE COMPONENTS */
+
+
+/* SUBMIT BUTTON COMPONENT */
+
+#submit_button_component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#submit_button_component button {
+    font-size: 2em;
+}
+
+#submit_button_component button:hover {
+    cursor: pointer;
 }
 
 /* PICTURES COMPONENT */
+
+#pictures_component img {
+    width: 200px;
+}
