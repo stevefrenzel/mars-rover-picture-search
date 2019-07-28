@@ -29,15 +29,18 @@ h1, h2 {
 .button-wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .component {
     padding: 1%;
-    width: 400px;
+    width: 450px;
 }
 
 /* GLOBAL COMPONENT SETTINGS */
 
+#title_component,
 #mars_rover_component, 
 #curiosity_component,
 #opportunity_spirit_component,
@@ -47,6 +50,7 @@ h1, h2 {
     margin: 5px;
     padding-bottom: 20px;
     border-radius: 5px;
+    text-align: center;
 }
 
 #mars_rover_component, 
@@ -63,28 +67,13 @@ h1, h2 {
 
 /* TITLE COMPONENT */
 
-#title_component {
-    text-align: center;
-    width: 100vw;
+#title_component h1 {
+    background-color: rgba(5, 94, 169);
+    color: #fff;
+    border-radius: 5px;
+    width: 450px;
+    margin: 5px;
 }
-
-/* FORM COMPONENT */
-
-
-/* MARS ROVER COMPONENT */
-
-
-/* CURIOSITY COMPONENT */
-
-
-/* OPPORTUNITY & SPIRIT COMPONENT */
-
-
-/* TIMEZONE COMPONENT */
-
-
-/* DATE COMPONENTS */
-
 
 /* SUBMIT BUTTON COMPONENT */
 
@@ -97,14 +86,63 @@ h1, h2 {
 
 #submit_button_component button {
     font-size: 2em;
+    background-color: rgba(248, 25, 61);
+    color: #fff;
+    border-radius: 5px;
+    border-style: none;
+    padding: 10px;
+    transition: all 0.5s ease-out;
 }
 
 #submit_button_component button:hover {
     cursor: pointer;
+    background-color: rgba(5, 94, 169);
+    transition: all 0.5s ease-out;
 }
 
 /* PICTURES COMPONENT */
 
+#pictures_component {
+    width: 630px;
+    text-align: center;
+    padding: 0;
+}
+
 #pictures_component img {
     width: 200px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+    #pictures_component {
+    width: 420px;
+    }
+    .component {
+        width: 420px;
+    }
+    #title_component h1 {
+        width: 420px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    #pictures_component {
+    width: 210px;
+    }
+    .component {
+        width: 300px;
+    }
+    #title_component h1 {
+        font-size: 1.5em;
+        width: 300px;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    #submit_button_component button {
+        font-size: 1em;
+    }
 }
