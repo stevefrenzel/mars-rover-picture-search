@@ -28,12 +28,17 @@ Depending on the Mars rover selected, you can see photos taken by one of the fol
 
 ## 3. Structure 🗂
 
-By now it is very simple, only three components so far:
-
 ```
 App.js
 |_ Title.js
 |_  Form.js
+    |_MarsRover.js
+      |_Curiosity.js
+      |_OpportunityAndSpirit.js
+    |_Timezone.js
+      |_EarthDate.js
+      |_MartianSol.js
+    |_SubmitButton.js
 |_  Pictures.js
 ```
 
@@ -41,36 +46,6 @@ I haven't spend any thought on design yet, as I want it to be fully functional b
 
 ## 4. To Do List ⚠️
 
-#### 1. Choosing between earth time or martian sol
+- Make design responsive
 
-Depending on the selection, an input field for entering the earth date (calendar) or the martian sol (number) will appear.
-
-#### 2. Showing only available cameras
-
-Depending on the selected Mars rover, the following cameras will be available:
-
-**Curiosity:**
-
--   Front Hazard Avoidance Camera
--   Rear Hazard Avoidance Camera
--   Mast Camera
--   Chemistry and Camera Complex
--   Mars Hand Lens Imager
--   Mars Descent Imager
--   Navigation Camera
-
-**Opportunity & Spirit:**
-
--   Front Hazard Avoidance Camera
--   Rear Hazard Avoidance Camera
--   Navigation Camera
--   Panoramic Camera
--   Miniature Thermal Emission Spectrometer (Mini-TES)
-
-#### 3. Showing pictures
-
-Show the available amount of photos (25 per page, limited by NASA), otherwise show a message that no pictures are available.
-
-#### 4. Add semantic HTML
-
-This will not only make the code easier for others to read but also for search engines to crawl over it.
+- Limit pictures shown to 25, if more available, add option to show more
