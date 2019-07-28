@@ -6,7 +6,7 @@ export default class EarthDate extends React.Component {
         return (
             <React.Fragment>
                 <div className='component' id='earth_date_component'>
-                    <h1>EarthDate.js</h1>
+                    <h2>Month / Day / Year</h2>
                     <input onInput={this.props.selectEarthDate} id='earth_date_input' type='date' name='earth_date' required />
                 </div>
             </React.Fragment>
