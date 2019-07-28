@@ -6,8 +6,7 @@ export default class SubmitButton extends React.Component {
         return (
             <React.Fragment>
                 <div className='component' id='submit_button_component'>
-                    <h1>SubmitButton.js</h1>
-                    <button>Get Photos</button>
+                    <button>Submit</button>
                 </div>
             </React.Fragment>
         )
