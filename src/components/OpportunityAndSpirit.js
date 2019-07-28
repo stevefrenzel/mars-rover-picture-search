@@ -5,8 +5,7 @@ export default class OpportunityAndSpirit extends React.Component {
         return (
             <React.Fragment>
                 <div className='component' id='opportunity_spirit_component'>
-                    <h1>OpportunityAndSpirit.js</h1>
-                    <p>Choose a camera:</p>
+                    <h2>Choose a camera:</h2>
 
                     <div className='radio_button'>
                         <input onClick={this.props.selectCamera} type="radio" id="fhaz_camera_opportunity_spirit" name="camera_select" value="fhaz" required />
