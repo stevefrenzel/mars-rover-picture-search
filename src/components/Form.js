@@ -115,33 +115,25 @@ export default class Form extends React.Component {
         return (
             <React.Fragment>
                 <div className='component' id='form_component'>
-                    <h1>Form.js</h1>
                     <form onSubmit={this.props.getMarsRoverData}>
 
-                        {/* CHOOSE MARS ROVER */}
+                            <MarsRover selectRover={this.selectRover}/>
 
-                        <MarsRover selectRover={this.selectRover}/>
+                            {this.state.curiositySelected ? <Curiosity selectCamera={this.selectCamera} /> : null}
 
-                        {/* CHOOSE CAMERA */}
+                            {this.state.opportunitySelected || this.state.spiritSelected ? <OpportunityAndSpirit selectCamera={this.selectCamera} /> : null}
 
-                        {this.state.curiositySelected ? <Curiosity selectCamera={this.selectCamera} /> : null}
+                            {this.state.cameraSelected ? <Timezone selectTimezone={this.selectTimezone} /> : null}
 
-                        {this.state.opportunitySelected || this.state.spiritSelected ? <OpportunityAndSpirit selectCamera={this.selectCamera} /> : null}
+                            {this.state.earthDateSelected ? <EarthDate selectEarthDate={this.selectEarthDate} /> : null}
+                        
+                            {this.state.martianSolSelected ? <MartianSol selectMartianSol={this.selectMartianSol} /> : null}
 
-                        {/* CHOOSE TIMEZONE */}
-
-                        {this.state.cameraSelected ? <Timezone selectTimezone={this.selectTimezone} /> : null}
-                                                
-                        {/* ENTER EARTH DATE OR MARTIAN SOL */}
-
-                        {this.state.earthDateSelected ? <EarthDate selectEarthDate={this.selectEarthDate} /> : null}
-                      
-                        {this.state.martianSolSelected ? <MartianSol selectMartianSol={this.selectMartianSol} /> : null}
-
-                        {
-                            ((this.state.curiositySelected || this.state.opportunitySelected || this.state.spiritSelected) && 
-                            (this.state.earthDateEntered || this.state.martianSolEntered) && 
-                            this.state.cameraSelected) ? <SubmitButton /> : null}
+                            {
+                                ((this.state.curiositySelected || this.state.opportunitySelected || this.state.spiritSelected) && 
+                                (this.state.earthDateEntered || this.state.martianSolEntered) && 
+                                this.state.cameraSelected) ? <SubmitButton /> : null}
+                        
                     </form>
                 </div>
             </React.Fragment>
@@ -151,11 +143,4 @@ export default class Form extends React.Component {
 
 // TO DO:
 
-// Possible to store functions in components to clean up Form.js ?
-// Have a look at hooks!
-
-
-// show camera selection ONLY after Mars rover has been chosen
-// show timezone selection ONLY after camera has been chosen
-// show date DEPENDING on timezone selection
-// show submit button ONLY after Mars rover, camera and timezone have been selected and date has been entered
+// Possible to store functions in components to clean up Form.js with Hooks?
