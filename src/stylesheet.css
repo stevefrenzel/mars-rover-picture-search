@@ -19,18 +19,18 @@ h1, h2 {
 
 /* FLEXBOX SETTINGS */
 
-.wrapper {
+.wrapper, .button-wrapper, #submit_button_component {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.wrapper {
+    flex-direction: column;
+}
+
 .button-wrapper {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 .component {
@@ -78,9 +78,6 @@ h1, h2 {
 /* SUBMIT BUTTON COMPONENT */
 
 #submit_button_component {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
 }
 
