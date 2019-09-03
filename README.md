@@ -43,9 +43,3 @@ App.js
 ```
 
 I haven't spend any thought on design yet, as I want it to be fully functional beforehand, but I may put Form.js into a sidebar and show the pictures in a separated frame.
-
-## 4. To Do List ⚠️
-
-- Make design responsive
-
-- Limit pictures shown to 25, if more available, add option to show more
