@@ -5,7 +5,7 @@ export default class Pictures extends React.Component {
         if (!this.props.photos) {
             return null;
         }
-        if (this.props.photos.length === 0) {
+        if (this.props.photos && this.props.photos.photos.length === 0) {
             return (
                 <React.Fragment>
                     <h1>NO PHOTOS AVAILABLE!</h1>
@@ -27,10 +27,3 @@ export default class Pictures extends React.Component {
         );
     }
 }
-
-// TO DO:
-
-// How to add to alt of <img>
-// Rover: {photo.rover.name} / Camera: {photo.camera.full_name} / Earth Date: {photo.earth_date} / Martian Sol: {photo.sol}
-
-// NO PHOTOS AVAILABLE message not working...
