@@ -29,7 +29,6 @@ export default class App extends React.Component {
             `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${time}&camera=${camera}&api_key=${API_KEY}`
         );
         const data = await api_call.json();
-        console.log('Data from API call: ', data);
         
         this.setState({
             rover: rover,
