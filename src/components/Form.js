@@ -9,30 +9,19 @@ import SubmitButton from './SubmitButton';
 
 export default class Form extends React.Component {
     state = {
-
-        // DATA FOR API CALL
         rover: null,
         earth_date: null,
         martian_sol: null,
         camera: null,
-        
-        // DETERMINING WHICH ROVER WAS SELECTED
         curiositySelected: false,
         opportunitySelected: false,
         spiritSelected: false,
-
-        // DETERMINING WHICH TIMEZONE WAS SELECTED
-        // AND IF DATE HAS BEEN ENTERED
-
         earthDateSelected: false,
         earthDateEntered: false,
         martianSolSelected: false,
         martianSolEntered: false,
-
         cameraSelected: false
     };
-
-    // GETTING DATA FROM CHILD COMPONENTS
 
     selectRover = (e) => {
         if (e.target.value === 'curiosity') {
@@ -66,18 +55,19 @@ export default class Form extends React.Component {
             });
     }
 
-    // how to only setState when radio button is checked?
     selectTimezone = (e) => {
         if (e.target.value === 'earth_date') {
             this.setState({ 
                 timezone: e.target.value, 
                 earthDateSelected: true,
+                martianSolEntered: false,
                 martianSolSelected: false
             });
         } else if (e.target.value === 'martian_sol'){
             this.setState({ 
                 timezone: e.target.value, 
                 martianSolSelected: true,
+                earthDateEntered: false,
                 earthDateSelected: false
             });
         }
@@ -140,7 +130,3 @@ export default class Form extends React.Component {
         );
     }
 }
-
-// TO DO:
-
-// Possible to store functions in components to clean up Form.js with Hooks?
