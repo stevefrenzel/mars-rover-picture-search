@@ -3,7 +3,8 @@ import Title from './components/Title';
 import Form from './components/Form';
 import Pictures from './components/Pictures';
 
-import { GATSBY_API_KEY } from './secrets.json';
+// import { GATSBY_API_KEY } from './secrets.json';
+const GATSBY_API_KEY = process.env.GATSBY_API_KEY;
 
 export default class App extends React.Component {
     state = {
