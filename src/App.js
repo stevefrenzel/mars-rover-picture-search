@@ -4,7 +4,7 @@ import Form from './components/Form';
 import Pictures from './components/Pictures';
 
 // import { GATSBY_API_KEY } from './secrets.json';
-// const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
+const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 
 export default class App extends React.Component {
     state = {
