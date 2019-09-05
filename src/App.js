@@ -4,7 +4,7 @@ import Form from './components/Form';
 import Pictures from './components/Pictures';
 
 // import { GATSBY_API_KEY } from './secrets.json';
-const GATSBY_API_KEY = process.env.GATSBY_API_KEY;
+const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
 
 export default class App extends React.Component {
     state = {
@@ -27,7 +27,7 @@ export default class App extends React.Component {
         
         const camera = e.target.elements.camera_select.value;
         const api_call = await fetch(
-            `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${time}&camera=${camera}&GATSBY_API_KEY=${GATSBY_API_KEY}`
+            `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${time}&camera=${camera}&api_key=${REACT_APP_API_KEY}`
         );
         const data = await api_call.json();
         
