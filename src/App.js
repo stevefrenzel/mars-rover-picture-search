@@ -3,8 +3,8 @@ import Title from './components/Title';
 import Form from './components/Form';
 import Pictures from './components/Pictures';
 
-// import { GATSBY_API_KEY } from './secrets.json';
-const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
+// import { API_KEY } from './secrets.json';
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export default class App extends React.Component {
     state = {
@@ -27,7 +27,7 @@ export default class App extends React.Component {
         
         const camera = e.target.elements.camera_select.value;
         const api_call = await fetch(
-            `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${time}&camera=${camera}&api_key=${REACT_APP_API_KEY}`
+            `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${time}&camera=${camera}&api_key=${API_KEY}`
         );
         const data = await api_call.json();
         
